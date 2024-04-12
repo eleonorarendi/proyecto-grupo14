@@ -1,0 +1,931 @@
+/*
+Autores: Agustina Velazquez
+         Andreina Romero
+         Eleonora Roux
+         Vilma Ponce
+Fecha: 19/03/2024
+Curso: Full Stack NodeJS - Comision 24123
+Profesor: Fernando Lucena
+Descripcion: este archivo CSS contiene los estilos para el sitio web del Instituto Luminova
+*/
+
+/* Reglas universales */
+
+:root {
+    --color-primario: rgb(43, 139, 223);
+    --color-secundario: #e91e63;
+    --color-terciario: #303030;
+    --color-cuaternario: #f2f2f2;
+    --color-slide: rgba(255, 255, 255, 0.5);
+    --color-nav: #0B3D91;
+    --bg-oscuro: #171717;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 1em;
+    height: .5em;
+}
+
+/* Carril del scroll */
+::-webkit-scrollbar-track {
+    background-color: var(--color-terciario);
+}
+
+/* Almohadilla del scroll */
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-primario);
+    border-radius: 5em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Roboto Slab", serif;
+}
+
+body {
+    height: 100vh;
+    padding: 5.4em 0 0;
+    /*estos espacios hacen que no se superponga con el próximo bloque, asi queda flotando*/
+    background-color: var(--color-cuaternario);
+    font-family: "Nunito", sans-serif;
+}
+
+main {
+    background-color: var(--color-terciario);
+}
+
+fieldset {
+    padding: 1em 0;
+}
+
+legend {
+    background-color: var(--bg-oscuro);
+    color: var(--color-cuaternario);
+    text-align: center;
+    padding: .5em 1em;
+    border-radius: .5em;
+}
+
+/* Estilos para los elementos del formulario */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Roboto Slab", serif;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/************************* Navbar **************************/
+
+.header {
+    background-color: var(--color-nav);
+    height: 14vh;
+    /*altura fija de la barra de navegación*/
+    width: 100vw;
+    /*ancho, 100% de la pagina*/
+    position: fixed;
+    /*barra de navegación fija=fixed arriba, queda como flotando*/
+    top: 0;
+    /*siempre va a estar fijada a la ventana donde nos encontremos en la punta izquierda*/
+    left: 0;
+    z-index: 1;
+}
+
+.nav {
+    display: flex;
+    /*así hago que se separen los bloques del menu por un lado el logo y por el otro el menu*/
+    justify-content: space-between;
+    /*acá les digo que tengan espacio entre ellos*/
+    max-width: 1100px;
+    /*es un breakpoint para que no se alargue a toda la pantalla el menu y quede mas centrado en paginas anchas*/
+    margin: 0 auto;
+
+}
+
+/*estilos a todos los links*/
+.nav-link {
+    color: var(--color-cuaternario);
+    text-decoration: none;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+}
+
+.nav .nav-link img {
+    height: 10vh;
+    margin-top: 0.8rem;
+
+}
+
+/*formato del estilo de la caja del menu*/
+.nav-menu {
+    display: flex;
+    /*así hago todos los elementos del elemento del menú queden en fila, en forma horizontal por defecto*/
+    margin-right: 1rem;
+    list-style: none;
+    /*elimino los puntos de la lista*/
+
+}
+
+/*formato del estilo del link del menu*/
+.nav-menu-item {
+    font-size: 1rem;
+    line-height: 15vh;
+    text-transform: uppercase;
+    /*todo el texto en mayúscula*/
+    width: max-content;
+    /*para que no corte el texto de lo que tenga el link, porque si son dos palabras elimina una al achicarlo*/
+    margin: 0 0.6rem;
+    /*el espacio entre cada palabra del menu*/
+}
+
+.nav-menu-link {
+    padding: .5rem .7rem;
+    transition: all .7s ease;
+}
+
+.nav-menu-link:hover {
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: var(--color-primario);
+}
+
+/*estilos del boton hamburguesa*/
+.nav-toggle {
+    color: var(--color-cuaternario);
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    padding: 0 1.2rem;
+    line-height: 10vh;
+    cursor: pointer;
+    display: none;
+    /*para que no se vea en dispositivios grandes*/
+
+}
+
+/************************* Main **************************/
+.main-section {
+    margin-top: 2em;
+    padding: 2em;
+}
+
+/* Estilos para el título del formulario */
+.main-section h2 {
+    color: var(--color-cuaternario);
+    text-transform: uppercase;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Estilos para el contenedor del formulario */
+#formulario-container {
+    width: 60vw;
+    border-radius: 1em;
+    padding: 1.2em;
+    margin: 1em auto;
+    background-color: #f2f2f2a7;
+    border: 6px ridge #F2F2F2;
+}
+
+/* Estilos para el area del alumno/a */
+.name-label,
+.data-label,
+.genero-school-label,
+.contact-label {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.genero-label {
+    display: flex;
+    width: 100%;
+    /* top | right | bottom | left */
+    padding: 0 0 0 .7em;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.name-label input,
+.data-label input,
+.contact-label input {
+    width: 40em;
+    padding: 1em;
+    margin-bottom: 10px;
+    border: 1px solid var(--bg-oscuro);
+    border-radius: .5em;
+}
+
+.genero-label div {
+    display: flex;
+    gap: 3em;
+}
+
+.genero-label select {
+    width: 100%;
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid var(--bg-oscuro);
+    outline: none;
+    border-radius: .5em;
+    font-family: "Nunito", sans-serif;
+}
+
+.address-label {
+    padding: .5em;
+}
+
+.address-label input {
+    width: 40em;
+    padding: 1em;
+    /* top | right | bottom | left */
+    margin: 0 6px 10px 0;
+    border: 1px solid var(--bg-oscuro);
+    border-radius: .5em;
+}
+
+.actividades {
+    display: flex;
+    align-items: center;
+    padding: .5em 0;
+    border-bottom: 1px solid var(--bg-oscuro);
+}
+
+.actividades:last-child {
+    border: none;
+}
+
+.actividades h5 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-right: 1em;
+}
+
+.actividades div {
+    display: flex;
+    gap: 2em;
+}
+
+#comentarios {
+    width: 100%;
+    border: 1px solid var(--bg-oscuro);
+    border-radius: .5em;
+}
+
+.boton-formulario {
+    text-align: center;
+    margin: .5em 0;
+}
+
+.boton {
+    width: 60%;
+    padding: .6em 1.2em;
+    background-color: var(--color-primario);
+    color: var(--color-cuaternario);
+    border-radius: .3em;
+    font-family: "Roboto Slab", serif;
+    font-size: 1em;
+    text-transform: uppercase;
+
+    transition: background-color 0.5s ease;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+    animation: pulse 1.5s ease;
+}
+
+/* Animación para .boton:hover */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+/************************************************** Footer *************************************************/
+#footer-content {
+    width: 100%;
+    background-color: var(--color-terciario);
+}
+
+.footer-container {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 100%;
+    gap: 2em;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+
+    padding: 1.5em;
+    background-color: var(--bg-oscuro);
+}
+
+.attention-info h5 {
+    font-size: 1.3em;
+}
+
+.logo-link {
+    margin-left: 5em;
+}
+
+.logo-link a img {
+    width: 12em;
+    border-radius: 50%;
+}
+
+.address-info a,
+.attention-info {
+    display: flex;
+    flex-direction: row;
+    gap: .6em;
+    font-size: 1em;
+
+    text-decoration: none;
+    color: var(--color-primario);
+}
+
+.attention-info {
+    height: 5em;
+}
+
+.address-info-p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.address-info i,
+.attention-info i {
+    font-size: 2em;
+}
+
+.copy-footer {
+    text-align: center;
+    color: var(--color-cuaternario);
+    padding: .5em;
+}
+
+.footer-pages {
+    position: relative;
+    top: 0em;
+}
+
+/* Medias Queries */
+@media only screen and (max-width:600px) {
+
+    fieldset {
+        padding: 1em 0;
+    }
+
+    legend {
+        background-color: var(--bg-oscuro);
+        color: var(--color-cuaternario);
+        text-align: center;
+        padding: .5em 1em;
+        border-radius: .5em;
+    }
+
+    /* Estilos para los elementos del formulario */
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-family: "Roboto Slab", serif;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    /************************ Navbar *********/
+    .header {
+        width: 100vw;
+        height: 10vh;
+        padding-left: 1rem;
+    }
+
+    .nav .nav-link img {
+        height: 7vh;
+        margin-top: 0.5rem;
+    }
+
+    /*formato del estilo de la caja del menu*/
+    .nav-menu {
+        flex-direction: column;
+        /*ya esta en flex, pero es automatico que sea horizontal, asi le digo en columna;*/
+        align-items: center;
+        background-color: var(--color-nav);
+        position: fixed;
+        margin-top: 1em;
+        /*la posicion depende de la ventana donde se encuentra*/
+        left: 0;
+        top: 2vh;
+        /*con respecto al nav*/
+        width: 100%;
+        padding: 1rem 0;
+        height: calc(100%-1rem);
+        /*es un calculo para que se adapte a la ventana y que haya un scroll en el caso que el dispositivo sea muy chico*/
+        overflow-y: auto;
+        /*para que agregue la barra al costado cuando la necesite sino no*/
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    /*formato del estilo del link del menu*/
+    .nav-menu-item {
+        line-height: 6vh;
+    }
+
+    .nav-menu-link:hover {
+        /*para cuando esta activo quede con ese color el link*/
+        background: var(--color-primario);
+
+    }
+
+    .nav-toggle {
+        display: block;
+        /*para que aparezca la hamburguesa*/
+    }
+
+    .nav-menu_visible {
+        left: 0;
+        top: 7vh;
+
+    }
+
+    /************************* Main **************************/
+    .main-section {
+        margin-top: .7em;
+        padding: 1em;
+    }
+
+    /* Estilos para el contenedor del formulario */
+    #formulario-container {
+        width: 95vw;
+        padding: 1em;
+    }
+
+    /* Estilos para el area del alumno/a */
+    .name-label,
+    .data-label,
+    .genero-school-label,
+    .contact-label {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .name-label div,
+    .data-label div,
+    .genero-school-label div,
+    .contact-label div {
+        width: 100%;
+    }
+
+    .name-label input,
+    .data-label input,
+    .contact-label input {
+        width: 100%;
+    }
+
+    .genero-label select {
+        width: 100%;
+    }
+
+    .genero-school-label .genero-label:nth-child(2) {
+        width: 100%;
+    }
+
+    .address-label {
+        padding: .5em;
+        width: 100%;
+    }
+    .address-label div {
+        width: 100%;
+    }
+
+    .address-label {
+        padding: .5em;
+    }
+
+    .address-label input {
+        width: 38em;
+    }
+
+    .actividades {
+        flex-direction: column;
+        text-align: center;
+        border-bottom: 1px solid var(--bg-oscuro);
+    }
+
+    .actividades:last-child {
+        border: none;
+    }
+
+    /************************************ Footer *****************************/
+    .footer-container {
+        padding: 0em;
+        width: 100vw;
+    }
+
+    .footer-access {
+        display: inline-block;
+        padding: .5em;
+    }
+
+    .footer-link h4 {
+        font-size: 1.5em;
+    }
+
+    .footer-link a {
+        margin: .8em auto;
+    }
+
+    .footer-link a i {
+        font-size: 4em;
+    }
+
+    .footer-info {
+        display: inline-block;
+    }
+
+    .logo-link {
+        margin: 1em auto;
+        text-align: center;
+    }
+
+    .logo-link img {
+        width: 18em;
+    }
+
+    .address-info,
+    .attention-info {
+        gap: 1em;
+        font-size: 1.1em;
+        margin: 1em auto;
+    }
+
+    .address-info i,
+    .attention-info i {
+        font-size: 2.5em;
+    }
+
+    .footer-info h5 {
+        font-size: 1.3em;
+    }
+
+    .attention-info {
+        height: auto;
+    }
+
+    .copy-footer {
+        text-align: center;
+        font-weight: normal;
+        font-size: .9em;
+        padding-bottom: 1em;
+    }
+
+    .footer-pages {
+        position: relative;
+        top: 0em;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width:767px) {
+
+    /************************ Navbar *********/
+    .header {
+        width: 100vw;
+        height: 10vh;
+        padding-left: 1rem;
+    }
+
+    .nav .nav-link img {
+        height: 7vh;
+        margin-top: 0.5rem;
+    }
+
+    /*formato del estilo de la caja del menu*/
+    .nav-menu {
+        flex-direction: column;
+        /*ya esta en flex, pero es automatico que sea horizontal, asi le digo en columna;*/
+        align-items: center;
+        background-color: var(--color-nav);
+        position: fixed;
+        margin-top: 1em;
+        /*la posicion depende de la ventana donde se encuentra*/
+        left: 0;
+        top: 2vh;
+        /*con respecto al nav*/
+        width: 100%;
+        padding: 1rem 0;
+        height: calc(100%-1rem);
+        /*es un calculo para que se adapte a la ventana y que haya un scroll en el caso que el dispositivo sea muy chico*/
+        overflow-y: auto;
+        /*para que agregue la barra al costado cuando la necesite sino no*/
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    /*formato del estilo del link del menu*/
+    .nav-menu-item {
+        line-height: 6vh;
+    }
+
+    .nav-menu-link:hover {
+        /*para cuando esta activo quede con ese color el link*/
+        background: var(--color-primario);
+
+    }
+
+    .nav-toggle {
+        display: block;
+        /*para que aparezca la hamburguesa*/
+    }
+
+    .nav-menu_visible {
+        left: 0;
+        top: 7vh;
+
+    }
+
+    /************************* Main **************************/
+    .main-section {
+        margin-top: -.2em;
+        padding: 1em;
+    }
+
+    /* Estilos para el contenedor del formulario */
+    #formulario-container {
+        width: 95vw;
+        padding: 1em;
+    }
+
+    /* Estilos para el area del alumno/a */
+    .name-label,
+    .data-label,
+    .genero-school-label,
+    .contact-label {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .name-label div,
+    .data-label div,
+    .genero-school-label div,
+    .contact-label div {
+        width: 100%;
+    }
+
+    .name-label input,
+    .data-label input,
+    .contact-label input {
+        width: 100%;
+    }
+
+    .genero-label select {
+        width: 100%;
+    }
+
+    .genero-school-label .genero-label:nth-child(2) {
+        width: 100%;
+    }
+
+    .address-label {
+        padding: .5em;
+        width: 100%;
+    }
+    .address-label div {
+        width: 100%;
+    }
+
+    .actividades {
+        flex-direction: column;
+        text-align: center;
+        border-bottom: 1px solid var(--bg-oscuro);
+    }
+
+    .actividades:last-child {
+        border: none;
+    }
+
+    /************************************ Footer *****************************/
+    .footer-container {
+        padding: 0em;
+        width: 100vw;
+    }
+
+    .footer-access {
+        display: inline-block;
+        padding: .5em;
+    }
+
+    .footer-link h4 {
+        font-size: 1.5em;
+    }
+
+    .footer-link a {
+        margin: .8em auto;
+    }
+
+    .footer-link a i {
+        font-size: 4em;
+    }
+
+    .footer-info {
+        display: inline-block;
+        color: var(--color-secundario);
+    }
+
+    .logo-link {
+        margin: 1em auto;
+        text-align: center;
+    }
+
+    .logo-link img {
+        width: 18em;
+    }
+
+    .address-info,
+    .attention-info {
+        gap: 1em;
+        font-size: 1.1em;
+        margin: 1em auto;
+    }
+
+    .address-info i,
+    .attention-info i {
+        font-size: 2.5em;
+    }
+
+    .footer-info h5 {
+        font-size: 1.3em;
+    }
+
+    .attention-info {
+        height: auto;
+    }
+
+    .copy-footer {
+        text-align: center;
+        font-weight: normal;
+        font-size: .9em;
+        padding-bottom: 1em;
+    }
+
+    .footer-pages {
+        position: relative;
+        top: 0em;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width: 1919px) {
+
+    /************************* Main **************************/
+    /* Estilos para el contenedor del formulario */
+    #formulario-container {
+        width: 95vw;
+        padding: 1em;
+    }
+
+    /* Estilos para el area del alumno/a */
+    .name-label,
+    .data-label,
+    .genero-school-label,
+    .contact-label {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .name-label div,
+    .data-label div,
+    .genero-school-label div,
+    .contact-label div {
+        width: 100%;
+    }
+
+    .name-label input,
+    .data-label input,
+    .contact-label input {
+        width: 100%;
+    }
+
+    .genero-label select {
+        width: 100%;
+    }
+
+    .genero-school-label .genero-label:nth-child(2) {
+        width: 100%;
+    }
+
+    .address-label {
+        padding: .5em;
+        width: 100%;
+    }
+    .address-label div {
+        width: 100%;
+    }
+
+    .address-label {
+        padding: .5em;
+    }
+
+    .address-label input {
+        width: 100%;
+    }
+
+    /************************************* Footer *****************************/
+    .footer-access {
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .footer-link a {
+        margin: 1em auto;
+    }
+
+    .footer-link h4 {
+        font-size: 1.2em;
+    }
+
+    .footer-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .footer-info h5 {
+        font-size: 1.2em;
+    }
+
+    .logo-link {
+        margin: 0px;
+        align-self: center;
+    }
+
+    .logo-link img {
+        width: 12em;
+    }
+
+    .address-info,
+    .attention-info {
+        gap: 15px;
+        font-size: 1.2em;
+    }
+
+    .attention-info {
+        height: 6.5em;
+    }
+
+    .copy-footer {
+        font-size: 1em;
+        font-weight: normal;
+        padding-bottom: 1em;
+    }
+
+    .footer-pages {
+        position: relative;
+        top: 0em;
+    }
+}

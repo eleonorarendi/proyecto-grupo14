@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Meta datos -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pagina escolar del Instituto Luminova">
+    <meta name="keywords" content="escuela, instituto, inicial, primaria, secundario">
+    <meta name="author" content="Agustina Velazquez, Andreina Romero, Eleonora Roux, Vilma Ponce">
+    <title>Formulario de Inscripción | Instituto Luminova</title>
+    <!-- zona de script FontAwesome -->
+    <script src="https://kit.fontawesome.com/eae8fc4e25.js" crossorigin="anonymous"></script>
+    <!-- zona del favicon -->
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <!-- zona de estilos -->
+    <link rel="stylesheet" href="../static/css/formulario.css">
+    <!-- zona de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Varela+Round&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&family=Varela+Round&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="nav-link"><img src="../static/img/navFondo.png" alt=""></a>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <a href="../index.html" class="nav-menu-link nav-link">Inicio</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="../index.html#institucional" class="nav-menu-link nav-link">Niveles</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="../index.html#actividades" class="nav-menu-link nav-link">Actividades</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="./contact.html" class="nav-menu-link nav-link">Contacto</a>
+                </li>
+        </nav>
+    </header>
+    <main class="main-section">
+        <h2>Formulario de inscripción</h2>
+        <section id="formulario-container">
+            <form id="registroForm">
+                <!-- Datos del Alumno -->
+                <fieldset>
+                    <legend>Datos del Alumno/a</legend>
+                    <div class="name-label">
+                        <div>
+                            <label for="nombre_alumno">Nombre/s :</label>
+                            <input type="text" id="nombre_alumno" name="nombre_alumno" placeholder="Nombre">
+                        </div>
+                        <div>
+                            <label for="apellido_alumno">Apellido/s :</label>
+                            <input type="text" id="apellido_alumno" name="apellido_alumno" placeholder="Apellido">
+                        </div>
+                    </div>
+                    <div class="data-label">
+                        <div>
+                            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                        </div>
+                        <div>
+                            <label for="n_documento">Documento:</label>
+                            <input type="number" id="n_documento" name="n_documento" required>
+                        </div>
+                    </div>
+                    <div class="genero-school-label">
+                        <div class="genero-label">
+                            <label for="genero">Género:</label>
+                            <div>
+                                <label><input type="radio" name="genero" id="femenino" value="femenino" /> Femenino</label>
+                                <label><input type="radio" name="genero" id="masculino" value="masculino" />
+                                    Masculino</label>
+                                <label><input type="radio" name="genero" id="otro" value="otro" /> Otro</label>
+                            </div>
+                        </div>
+                        <div class="genero-label">
+                            <label for="estudios">Nivel Cursando:</label>
+                            <select id="estudios" name="estudios">
+                                <option value="inicial">Inicial</option>
+                                <option value="primaria">Primaria</option>
+                                <option value="secundaria">Secundaria</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- Datos del Tutor -->
+                <fieldset>
+                    <legend>Datos del Tutor</legend>
+                    <div class="name-label">
+                        <div>
+                            <label for="nombre_tutor">Nombre/s :</label>
+                            <input type="text" id="nombre_tutor" name="nombre_tutor" placeholder="Nombre">
+                        </div>
+                        <div>
+                            <label for="apellido_tutor">Apellido/s :</label>
+                            <input type="text" id="apellido_tutor" name="apellido_tutor" placeholder="Apellido">
+                        </div>
+                    </div>
+                    <div class="address-label">
+                        <label for="direccion">Dirección:</label>
+                        <div>
+                            <input type="text" id="calle" name="calle" placeholder="Calle" required>
+                            <input type="text" id="numero" name="numero" placeholder="Número" required>
+                            <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+                            <input type="text" id="codigo_postal" name="codigo_postal" placeholder="Código Postal" required>
+                        </div>
+                    </div>
+                    <div class="contact-label">
+                        <div>
+                            <label for="telefono">Teléfono de contacto:</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ej 11123456789" required>
+                        </div>
+                        <div>
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" placeholder="mi@correo.com" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- Actividad elegida -->
+                <fieldset>
+                    <legend>Seleccione las Actividades</legend>
+                    <div id="deportes" class="actividades">
+                        <h5>Deportes:</h5>
+                        <div>
+                            <label for="natacion"><input type="checkbox" id="natacion" name="natacion" value="Natación"> Natación</label>                        
+                            <label for="basket"><input type="checkbox" id="basquet" name="basquet" value="Basquet"> Básquet</label>                        
+                            <label for="futbol"><input type="checkbox" id="futbol" name="futbol" value="Futbol"> Fútbol</label>
+                            <label for="atletismo"><input type="checkbox" id="atletismo" name="atletismo" value="Atletismo"> Atletísmo</label>
+                        </div>
+                    </div>
+                    <div id="arte" class="actividades">
+                        <h5>Arte:</h5>
+                        <div>
+                            <label for="teatro"><input type="checkbox" id="teatro" name="teatro" value="Teatro"> Teatro</label>
+                            <label for="musica"><input type="checkbox" id="musica" name="musica" value="Musica"> Música</label>
+                            <label for="pintura_dibujo"><input type="checkbox" id="pintura_dibujo" name="pintura_dibujo" value="pintura_dibujo"> Pintura y Dibujo</label>
+                        </div>
+                    </div>
+                    <div id="academico" class="actividades">
+                        <h5>Académico:</h5>
+                        <div>
+                            <label for="ciencias"><input type="checkbox" id="ciencias" name="ciencias" value="club_ciencias"> Club de Ciencias</label>
+                            <label for="lectura"><input type="checkbox" id="lectura" name="lectura" value="club_lectura"> Club de Lectura</label>
+                            <label for="debate"><input type="checkbox" id="debate" name="debate" value="club_debate"> Club de debate</label>
+                        </div>
+                    </div>
+                    <div id="comunitario" class="actividades">
+                        <h5>Voluntariado:</h5>
+                        <div>
+                            <label for="hospitales"><input type="checkbox" id="hospitales" name="hospitales" value="voluntariado_hospitales"> Voluntariado en Hospitales</label>
+                            <label for="refugios_animales"><input type="checkbox" id="refugios_animales" name="refugios_animales" value="voluntariado_refugios"> Voluntariado Refugios de Animales</label>
+                        </div>
+                    </div>
+                    <div id="idiomas" class="actividades">
+                        <h5>Idiomas:</h5>
+                        <div>
+                            <label for="ingles"><input type="checkbox" id="ingles" name="ingles" value="ingles"> Inglés</label>
+                            <label for="frances"><input type="checkbox" id="frances" name="frances" value="frances"> Francés</label>
+                            <label for="aleman"><input type="checkbox" id="aleman" name="aleman" value="aleman"> Alemán</label>
+                        </div>
+                    </div>
+                    <div id="huerta" class="actividades">
+                        <h5>Huerta:</h5>
+                        <div>
+                            <label for="huerta"><input type="checkbox" id="huerta" name="huerta" value="Huerta organica"> Huerta</label>
+                        </div>                        
+                    </div>
+                </fieldset>
+                <!-- Comentarios -->
+                <div>
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" rows="10"></textarea>
+                </div>
+                <!-- Boton -->
+                <div class="boton-formulario">
+                    <button type="submit" onclick="enviarFormulario()" class="boton">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <section id="footer-content" class="footer-pages">
+            <!-- Contacto -->
+            <article class="footer-container">
+                <div class="footer-info">
+                    <!-- Logo -->
+                    <div class="logo-link">
+                        <a href="../index.html">
+                            <img src="../static/img/navFondo.png" alt="Logo sin fondo">
+                        </a>
+                    </div>
+                    <!-- Dirección -->
+                    <div class="address-info">
+                        <a href="./contact.html">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <div class="address-info-p">
+                                <p>Calle Falsa 123</p>
+                                <p>Buenos Aires, Argentina</p>
+                                <p>Tel: 1234-5678</p>
+                                <p>escuela@correo.com</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Horario de Atención -->
+                    <div class="attention-info">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h5>Horario de Administración</h5>
+                            <p>De Lunes a Viernes de 7:30 a 19:00 hs</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- Derechos -->
+            <article class="copy-footer">
+                <p>© 2023 Todos los derechos reservados Grupo 14-Comision 24123</p>
+            </article>
+        </section>
+    </footer>
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>
