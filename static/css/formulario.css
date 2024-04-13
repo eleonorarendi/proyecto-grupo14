@@ -60,38 +60,13 @@ h5 {
 }
 
 body {
-    height: 100vh;
-    padding: 5.4em 0 0;
     /*estos espacios hacen que no se superponga con el próximo bloque, asi queda flotando*/
-    background-color: var(--color-cuaternario);
+    background-color: var(--color-terciario);
     font-family: "Nunito", sans-serif;
 }
 
 main {
-    background-color: var(--color-terciario);
-}
-
-fieldset {
-    padding: 1em 0;
-}
-
-legend {
-    background-color: var(--bg-oscuro);
-    color: var(--color-cuaternario);
-    text-align: center;
-    padding: .5em 1em;
-    border-radius: .5em;
-}
-
-/* Estilos para los elementos del formulario */
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-family: "Roboto Slab", serif;
-}
-
-textarea {
-    resize: vertical;
+    margin-top: 9em;
 }
 
 /************************* Navbar **************************/
@@ -179,157 +154,120 @@ textarea {
     cursor: pointer;
     display: none;
     /*para que no se vea en dispositivios grandes*/
-
 }
 
 /************************* Main **************************/
-.main-section {
-    margin-top: 2em;
-    padding: 2em;
+/* Estilos para el contenedor del formulario */
+#formulario-container {
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    /* Cambiado a max-width para hacerlo sensible */
+    margin: 0 auto;
+    margin-bottom: 2em;
+    background-color: #f2f2f298;
 }
 
 /* Estilos para el título del formulario */
-.main-section h2 {
-    color: var(--color-cuaternario);
-    text-transform: uppercase;
-    font-size: 2em;
+h2 {
     text-align: center;
+    margin-bottom: 20px;
+    /* Agregado margen inferior para separar del formulario */
+    color: var(--color-cuaternario);
 }
 
-/* Estilos para el contenedor del formulario */
-#formulario-container {
-    width: 60vw;
-    border-radius: 1em;
-    padding: 1.2em;
-    margin: 1em auto;
-    background-color: #f2f2f2a7;
-    border: 6px ridge #F2F2F2;
+/* Estilos para los elementos del formulario */
+label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* Estilos para el area del alumno/a */
-.name-label,
-.data-label,
-.genero-school-label,
-.contact-label {
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.genero-label {
-    display: flex;
-    width: 100%;
-    /* top | right | bottom | left */
-    padding: 0 0 0 .7em;
-    flex-direction: column;
-    justify-content: start;
-}
-
-.name-label input,
-.data-label input,
-.contact-label input {
-    width: 40em;
-    padding: 1em;
+    /* Ajuste para compensar el padding */
+    padding: 8px;
     margin-bottom: 10px;
     border: 1px solid var(--bg-oscuro);
-    border-radius: .5em;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.genero-label div {
-    display: flex;
-    gap: 3em;
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
 }
 
-.genero-label select {
-    width: 100%;
-    display: inline-block;
-    padding: 1em;
+textarea {
+    resize: vertical;
+}
+
+/* Estilos específicos para algunos campos */
+#nombre,
+#apellido,
+#direccion,
+#telefono,
+#email,
+#fecha_nacimiento,
+#codigo_postal,
+#comentarios {
+    padding: 8px;
+    margin-bottom: 10px;
     border: 1px solid var(--bg-oscuro);
-    outline: none;
-    border-radius: .5em;
-    font-family: "Nunito", sans-serif;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.address-label {
-    padding: .5em;
-}
-
-.address-label input {
-    width: 40em;
-    padding: 1em;
-    /* top | right | bottom | left */
-    margin: 0 6px 10px 0;
-    border: 1px solid var(--bg-oscuro);
-    border-radius: .5em;
-}
-
-.actividades {
+/* Estilos para alinear los elementos de género horizontalmente */
+.genero-container {
     display: flex;
     align-items: center;
-    padding: .5em 0;
-    border-bottom: 1px solid var(--bg-oscuro);
+    margin-bottom: 10px;
 }
 
-.actividades:last-child {
-    border: none;
+.genero-container label {
+    margin-right: 10px;
 }
 
-.actividades h5 {
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 1.2em;
-    margin-right: 1em;
+/* Estilos para alinear los elementos de actividades horizontalmente */
+.actividades input[type="checkbox"],
+.actividades label {
+    display: inline-block;
+    margin-right: 10px;
+    /* Ajusta el espacio entre los checkboxes y sus etiquetas según sea necesario */
 }
 
-.actividades div {
-    display: flex;
-    gap: 2em;
+.conocimientos-container {
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
-#comentarios {
-    width: 100%;
-    border: 1px solid var(--bg-oscuro);
-    border-radius: .5em;
+.conocimientos-container span {
+    text-decoration: underline;
 }
 
-.boton-formulario {
-    text-align: center;
-    margin: .5em 0;
-}
-
+/* estilos boton formulario */
 .boton {
-    width: 60%;
-    padding: .6em 1.2em;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px 20px;
     background-color: var(--color-primario);
+    /* Cambia el color de fondo según tu preferencia */
     color: var(--color-cuaternario);
-    border-radius: .3em;
-    font-family: "Roboto Slab", serif;
-    font-size: 1em;
-    text-transform: uppercase;
-
-    transition: background-color 0.5s ease;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .boton:hover {
     background-color: #0056b3;
-    animation: pulse 1.5s ease;
-}
-
-/* Animación para .boton:hover */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-
+    /* Cambia el color de fondo al pasar el mouse */
 }
 
 /************************************************** Footer *************************************************/
@@ -407,30 +345,14 @@ textarea {
     top: 0em;
 }
 
-/* Medias Queries */
-@media only screen and (max-width:600px) {
-
-    fieldset {
-        padding: 1em 0;
+/***************************************** Media Queries ********************************************/
+@media (max-width: 767px) {
+    main {
+        top: 1em;
     }
 
-    legend {
-        background-color: var(--bg-oscuro);
-        color: var(--color-cuaternario);
-        text-align: center;
-        padding: .5em 1em;
-        border-radius: .5em;
-    }
-
-    /* Estilos para los elementos del formulario */
-    label {
-        display: block;
-        margin-bottom: 5px;
-        font-family: "Roboto Slab", serif;
-    }
-
-    textarea {
-        resize: vertical;
+    footer {
+        top: 1em;
     }
 
     /************************ Navbar *********/
@@ -475,7 +397,6 @@ textarea {
     .nav-menu-link:hover {
         /*para cuando esta activo quede con ese color el link*/
         background: var(--color-primario);
-
     }
 
     .nav-toggle {
@@ -486,446 +407,133 @@ textarea {
     .nav-menu_visible {
         left: 0;
         top: 7vh;
-
     }
 
-    /************************* Main **************************/
-    .main-section {
-        margin-top: .7em;
-        padding: 1em;
-    }
-
-    /* Estilos para el contenedor del formulario */
-    #formulario-container {
-        width: 95vw;
-        padding: 1em;
-    }
-
-    /* Estilos para el area del alumno/a */
-    .name-label,
-    .data-label,
-    .genero-school-label,
-    .contact-label {
+    /*********************************** Footer ***************************************/
+    #footer-content {
         width: 100%;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .name-label div,
-    .data-label div,
-    .genero-school-label div,
-    .contact-label div {
-        width: 100%;
-    }
-
-    .name-label input,
-    .data-label input,
-    .contact-label input {
-        width: 100%;
-    }
-
-    .genero-label select {
-        width: 100%;
-    }
-
-    .genero-school-label .genero-label:nth-child(2) {
-        width: 100%;
-    }
-
-    .address-label {
-        padding: .5em;
-        width: 100%;
-    }
-    .address-label div {
-        width: 100%;
-    }
-
-    .address-label {
-        padding: .5em;
-    }
-
-    .address-label input {
-        width: 38em;
-    }
-
-    .actividades {
-        flex-direction: column;
-        text-align: center;
-        border-bottom: 1px solid var(--bg-oscuro);
-    }
-
-    .actividades:last-child {
-        border: none;
-    }
-
-    /************************************ Footer *****************************/
-    .footer-container {
-        padding: 0em;
-        width: 100vw;
+        background-color: var(--color-terciario);
     }
 
     .footer-access {
-        display: inline-block;
-        padding: .5em;
-    }
-
-    .footer-link h4 {
-        font-size: 1.5em;
-    }
-
-    .footer-link a {
-        margin: .8em auto;
-    }
-
-    .footer-link a i {
-        font-size: 4em;
-    }
-
-    .footer-info {
-        display: inline-block;
-    }
-
-    .logo-link {
-        margin: 1em auto;
-        text-align: center;
-    }
-
-    .logo-link img {
-        width: 18em;
-    }
-
-    .address-info,
-    .attention-info {
-        gap: 1em;
-        font-size: 1.1em;
-        margin: 1em auto;
-    }
-
-    .address-info i,
-    .attention-info i {
-        font-size: 2.5em;
-    }
-
-    .footer-info h5 {
-        font-size: 1.3em;
-    }
-
-    .attention-info {
-        height: auto;
-    }
-
-    .copy-footer {
-        text-align: center;
-        font-weight: normal;
-        font-size: .9em;
-        padding-bottom: 1em;
-    }
-
-    .footer-pages {
-        position: relative;
-        top: 0em;
-    }
-}
-
-@media only screen and (min-width: 601px) and (max-width:767px) {
-
-    /************************ Navbar *********/
-    .header {
-        width: 100vw;
-        height: 10vh;
-        padding-left: 1rem;
-    }
-
-    .nav .nav-link img {
-        height: 7vh;
-        margin-top: 0.5rem;
-    }
-
-    /*formato del estilo de la caja del menu*/
-    .nav-menu {
-        flex-direction: column;
-        /*ya esta en flex, pero es automatico que sea horizontal, asi le digo en columna;*/
-        align-items: center;
-        background-color: var(--color-nav);
-        position: fixed;
-        margin-top: 1em;
-        /*la posicion depende de la ventana donde se encuentra*/
-        left: 0;
-        top: 2vh;
-        /*con respecto al nav*/
-        width: 100%;
-        padding: 1rem 0;
-        height: calc(100%-1rem);
-        /*es un calculo para que se adapte a la ventana y que haya un scroll en el caso que el dispositivo sea muy chico*/
-        overflow-y: auto;
-        /*para que agregue la barra al costado cuando la necesite sino no*/
-        left: 100%;
-        transition: left 0.3s;
-    }
-
-    /*formato del estilo del link del menu*/
-    .nav-menu-item {
-        line-height: 6vh;
-    }
-
-    .nav-menu-link:hover {
-        /*para cuando esta activo quede con ese color el link*/
-        background: var(--color-primario);
-
-    }
-
-    .nav-toggle {
-        display: block;
-        /*para que aparezca la hamburguesa*/
-    }
-
-    .nav-menu_visible {
-        left: 0;
-        top: 7vh;
-
-    }
-
-    /************************* Main **************************/
-    .main-section {
-        margin-top: -.2em;
-        padding: 1em;
-    }
-
-    /* Estilos para el contenedor del formulario */
-    #formulario-container {
-        width: 95vw;
-        padding: 1em;
-    }
-
-    /* Estilos para el area del alumno/a */
-    .name-label,
-    .data-label,
-    .genero-school-label,
-    .contact-label {
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .name-label div,
-    .data-label div,
-    .genero-school-label div,
-    .contact-label div {
-        width: 100%;
-    }
-
-    .name-label input,
-    .data-label input,
-    .contact-label input {
-        width: 100%;
-    }
-
-    .genero-label select {
-        width: 100%;
-    }
-
-    .genero-school-label .genero-label:nth-child(2) {
-        width: 100%;
-    }
-
-    .address-label {
-        padding: .5em;
-        width: 100%;
-    }
-    .address-label div {
-        width: 100%;
-    }
-
-    .actividades {
-        flex-direction: column;
-        text-align: center;
-        border-bottom: 1px solid var(--bg-oscuro);
-    }
-
-    .actividades:last-child {
-        border: none;
-    }
-
-    /************************************ Footer *****************************/
-    .footer-container {
-        padding: 0em;
-        width: 100vw;
-    }
-
-    .footer-access {
-        display: inline-block;
-        padding: .5em;
-    }
-
-    .footer-link h4 {
-        font-size: 1.5em;
-    }
-
-    .footer-link a {
-        margin: .8em auto;
-    }
-
-    .footer-link a i {
-        font-size: 4em;
-    }
-
-    .footer-info {
-        display: inline-block;
-        color: var(--color-secundario);
-    }
-
-    .logo-link {
-        margin: 1em auto;
-        text-align: center;
-    }
-
-    .logo-link img {
-        width: 18em;
-    }
-
-    .address-info,
-    .attention-info {
-        gap: 1em;
-        font-size: 1.1em;
-        margin: 1em auto;
-    }
-
-    .address-info i,
-    .attention-info i {
-        font-size: 2.5em;
-    }
-
-    .footer-info h5 {
-        font-size: 1.3em;
-    }
-
-    .attention-info {
-        height: auto;
-    }
-
-    .copy-footer {
-        text-align: center;
-        font-weight: normal;
-        font-size: .9em;
-        padding-bottom: 1em;
-    }
-
-    .footer-pages {
-        position: relative;
-        top: 0em;
-    }
-}
-
-@media only screen and (min-width:768px) and (max-width: 1919px) {
-
-    /************************* Main **************************/
-    /* Estilos para el contenedor del formulario */
-    #formulario-container {
-        width: 95vw;
-        padding: 1em;
-    }
-
-    /* Estilos para el area del alumno/a */
-    .name-label,
-    .data-label,
-    .genero-school-label,
-    .contact-label {
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .name-label div,
-    .data-label div,
-    .genero-school-label div,
-    .contact-label div {
-        width: 100%;
-    }
-
-    .name-label input,
-    .data-label input,
-    .contact-label input {
-        width: 100%;
-    }
-
-    .genero-label select {
-        width: 100%;
-    }
-
-    .genero-school-label .genero-label:nth-child(2) {
-        width: 100%;
-    }
-
-    .address-label {
-        padding: .5em;
-        width: 100%;
-    }
-    .address-label div {
-        width: 100%;
-    }
-
-    .address-label {
-        padding: .5em;
-    }
-
-    .address-label input {
-        width: 100%;
-    }
-
-    /************************************* Footer *****************************/
-    .footer-access {
-        justify-content: space-between;
-        align-items: center;
-        gap: 1em;
-    }
-
-    .footer-link a {
-        margin: 1em auto;
-    }
-
-    .footer-link h4 {
-        font-size: 1.2em;
-    }
-
-    .footer-info {
         display: flex;
-        flex-direction: row;
+        flex-direction: row wrap;
         justify-content: center;
         align-items: center;
+
+        margin-top: .5em;
+        padding: 1em;
+        gap: 1.5em;
+    }
+
+    .footer-link a {
+        gap: 1;
+        padding: 1em;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        align-items: self-start;
+        gap: 1.5em;
+
+        padding: 1.5em;
+    }
+
+    .logo-link {
+        margin: 0em auto;
+    }
+
+    .address-info a,
+    .attention-info {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 883px) {
+    main {
+        position: relative;
+        top: 1em;
+    }
+
+    footer {
+        top: 1em;
+    }
+
+    /************************ Navbar *********/
+    .header {
+        width: 100vw;
+        height: 10vh;
+        padding-left: 1rem;
+    }
+
+    .nav .nav-link img {
+        height: 7vh;
+        margin-top: 0.5rem;
+    }
+
+    /*formato del estilo de la caja del menu*/
+    .nav-menu {
+        flex-direction: column;
+        /*ya esta en flex, pero es automatico que sea horizontal, asi le digo en columna;*/
+        align-items: center;
+        background-color: var(--color-nav);
+        position: fixed;
+        margin-top: 1em;
+        /*la posicion depende de la ventana donde se encuentra*/
+        left: 0;
+        top: 2vh;
+        /*con respecto al nav*/
+        width: 100%;
+        padding: 1rem 0;
+        height: calc(100%-1rem);
+        /*es un calculo para que se adapte a la ventana y que haya un scroll en el caso que el dispositivo sea muy chico*/
+        overflow-y: auto;
+        /*para que agregue la barra al costado cuando la necesite sino no*/
+        left: 100%;
+        transition: left 0.3s;
+    }
+
+    /*formato del estilo del link del menu*/
+    .nav-menu-item {
+        line-height: 6vh;
+    }
+
+    .nav-menu-link:hover {
+        /*para cuando esta activo quede con ese color el link*/
+        background: var(--color-primario);
+
+    }
+
+    .nav-toggle {
+        display: block;
+        /*para que aparezca la hamburguesa*/
+    }
+
+    .nav-menu_visible {
+        left: 0;
+        top: 7vh;
+    }
+
+    /*********************************** Footer ***************************************/
+    .footer-info {
         gap: 2em;
     }
 
-    .footer-info h5 {
-        font-size: 1.2em;
-    }
-
     .logo-link {
-        margin: 0px;
-        align-self: center;
+        margin-left: 0em;
     }
 
     .logo-link img {
-        width: 12em;
-    }
-
-    .address-info,
-    .attention-info {
-        gap: 15px;
-        font-size: 1.2em;
+        width: 15em;
     }
 
     .attention-info {
-        height: 6.5em;
+        height: 7em;
+        margin-bottom: .5em;
     }
 
     .copy-footer {
-        font-size: 1em;
-        font-weight: normal;
-        padding-bottom: 1em;
-    }
-
-    .footer-pages {
-        position: relative;
-        top: 0em;
+        font-size: 1.1em;
+        padding: .5em;
     }
 }

@@ -411,10 +411,30 @@ body {
 
     }
 
-    /* Main */
+      /************************************* Main *****************************/
     .sport-content {
         width: 100%;
         height: 100%;
+    }
+    .sport-content,
+    .art-content,
+    .academic-content,
+    .voluntariado-content,
+    .idiomas-content,
+    .huerta-content {
+        margin-top: 0;
+    }
+    
+    .sport-content h2,
+    .art-content h2,
+    .academic-content h2,
+    .voluntariado-content h2,
+    .idiomas-content h2,
+    .huerta-content h2 {
+        text-align: center;
+        font-size: 2.5em;
+        color: var(--color-cuaternario);
+        position: relative;
     }
 
     /************************************ Footer *****************************/
@@ -540,7 +560,17 @@ body {
 
     }
 
-    /* Main */
+  /************************************* Main *****************************/
+    
+    .sport-content,
+    .art-content,
+    .academic-content,
+    .voluntariado-content,
+    .idiomas-content,
+    .huerta-content {
+        margin-top: 0;
+    }
+
     .sport-content {
         width: 100%;
         height: 100%;
@@ -610,6 +640,24 @@ body {
     .sport-content {
         width: 100%;
         height: 100%;
+    }
+
+    .sport-content,
+    .art-content,
+    .academic-content,
+    .voluntariado-content,
+    .idiomas-content,
+    .huerta-content {
+        margin-top: 2em;
+    }
+
+    .sport-content h2,
+    .art-content h2,
+    .academic-content h2,
+    .voluntariado-content h2,
+    .idiomas-content h2,
+    .huerta-content h2 {
+        font-size: 3em;
     }
 
     /************************* Footer **************************/
